@@ -9,11 +9,11 @@ from .forms import ReportForm
 
 def report_view(request):
     form = ReportForm()
-    send_mail(
-        'uhhh',
-        'HEY???',
-        None,
-        ['sandratu2000@gmail.com'],
-        fail_silently=False,
-    )
+    # send_mail(
+    #     'uhhh',
+    #     'HEY???',
+    #     None,
+    #     ['sandratu2000@gmail.com'],
+    #     fail_silently=False,
+    # )
     return render(request, 'report/report.html', {'form': form})
