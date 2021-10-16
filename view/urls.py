@@ -1,4 +1,6 @@
 from django.urls import path
-from django.contrib.auth import views as auth_views
+from .views import ViewPageView
 
-urlpatterns = []
+urlpatterns = [
+  path('view', ViewPageView.as_view(), name='view'),
+]

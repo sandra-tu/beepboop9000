@@ -1,3 +1,4 @@
-from django.shortcuts import render
+from django.views.generic.base import TemplateView
 
-# Create your views here.
+class RegisterPageView(TemplateView):
+    template_name = "beepboop9000/register.html"
