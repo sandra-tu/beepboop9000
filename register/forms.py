@@ -1,21 +1,6 @@
 from django import forms
 from .models import Organisation
 
-COUNTRY_CHOICES = [
-        ('gb','Great Britain'),
-        ('ie', 'Ireland'),
-    ]
-TYPE_CHOICES = [
-    ('pubbar', 'Pub/Bar'),
-    ('club', 'Nightclub'),
-    ('soc', 'University Society'),
-    ('school', 'School'),
-    ('office', 'Office'),
-    ('store', 'Store'),
-    ('other', 'Other'),
-]
-CITY_CHOICES = [('edi', 'Edinburgh')]
-
 class RegisterForm(forms.ModelForm):
     # class Meta:
     #     model = Organisation

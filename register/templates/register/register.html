@@ -10,14 +10,14 @@
     {% csrf_token %}
 
     <div class="row justify-content-center">
-      <!-- Name of organisation -->
-      <div class="col-sm-12 mb-3">
+        <!-- Name of organisation -->
+        <div class="col-sm-12 mb-3">
           {% comment %} Name: {% endcomment %}
           {{ form.name|as_crispy_field }}
           {% comment %} <input type="text" name="name" value=""> {% endcomment %}
           {{ form.type|as_crispy_field }}
           {% comment %} <input type="text" name="type" value=""> {% endcomment %}
-      </div>
+        </div>
     </div>
 
     <div class="row justify-content-center">
