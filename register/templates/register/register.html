@@ -10,15 +10,6 @@
     {% csrf_token %}
 
     <div class="row justify-content-center">
-<<<<<<< HEAD
-      <!-- Name of organisation -->
-      <div class="col-sm-12 mb-3">
-          Name:
-          {% comment %} {{ form.name|as_crispy_field }} {% endcomment %}
-          <input type="text" name="name" value="">
-          <input type="text" name="type" value="">
-      </div>
-=======
         <!-- Name of organisation -->
         <div class="col-sm-12 mb-3">
           {% comment %} Name: {% endcomment %}
@@ -27,7 +18,6 @@
           {{ form.type|as_crispy_field }}
           {% comment %} <input type="text" name="type" value=""> {% endcomment %}
         </div>
->>>>>>> ad4f752 (starting report form)
     </div>
 
     <div class="row justify-content-center">
