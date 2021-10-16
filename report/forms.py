@@ -4,4 +4,4 @@ from .models import Report
 class ReportForm(forms.ModelForm):
     class Meta:
         model = Report
-        fields = ('date', 'time')
+        fields = ('date', 'time', 'event_description', 'accused_description', 'name')
