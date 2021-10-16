@@ -4,7 +4,7 @@ from django.conf import settings
 
 class Organisation(models.Model):
     COUNTRY_CHOICES = [
-        ('gb','United Kingdom'),
+        ('gb','Great Britain'),
         ('ie', 'Ireland'),
     ]
     TYPE_CHOICES = [
@@ -24,4 +24,3 @@ class Organisation(models.Model):
     email = models.EmailField()
     report_count = models.IntegerField(blank=False, null=False, default=0)
 
-# Create your models here.
