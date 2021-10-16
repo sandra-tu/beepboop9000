@@ -12,11 +12,11 @@
     <!-- <img src="..." class="card-img-top" alt="..."> -->
     <div class="card-body">
       <h5 class="card-title">{{ organisation.name }}</h5>
-      <p class="card-text">{{ organisation.city }}, {{ organisation.country }}</p>
-      <ul class="list-group list-group-flush">
-        <li class="list-group-item">No. of reports:<span>{{ organisation.num_reports }}</span></li>
-      </ul>
+      <p class="card-text">{{ organisation.get_city_display }}, {{ organisation.get_country_display }}</p>
     </div>
+    <ul class="list-group list-group-flush">
+      <li class="list-group-item">No. of reports:<span>{{ organisation.report_count }}</span></li>
+    </ul>
   </div>
 </div>
 {% endfor %}

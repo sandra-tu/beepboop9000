@@ -19,7 +19,7 @@ class Organisation(models.Model):
     CITY_CHOICES = [('edi', 'Edinburgh')]
     name = models.CharField(max_length=150)
     country = models.CharField(max_length=50, choices=COUNTRY_CHOICES)
-    city = models.CharField(max_length=50)
+    city = models.CharField(max_length=50, choices=CITY_CHOICES)
     type = models.CharField(max_length=25, choices=TYPE_CHOICES)
     email = models.EmailField()
     report_count = models.IntegerField(blank=False, null=False, default=0)
