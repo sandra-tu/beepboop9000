@@ -1,6 +1,7 @@
 from django import forms
 from .models import Organisation
 
+<<<<<<< HEAD
 COUNTRY_CHOICES = [
         ('gb','Great Britain'),
         ('ie', 'Ireland'),
@@ -17,6 +18,9 @@ TYPE_CHOICES = [
 CITY_CHOICES = [('edi', 'Edinburgh')]
 
 class RegisterForm(forms.Form):
+=======
+class RegisterForm(forms.ModelForm):
+>>>>>>> ad4f752 (starting report form)
     # class Meta:
     #     model = Organisation
     #     feilds = ('name', 'country', 'city', 'type', 'email')
