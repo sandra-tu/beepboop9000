@@ -5,21 +5,34 @@
 
 {% block content %}
 
-<div class="row row-cols-1 row-cols-md-2 g-4">
-{% for organisation in orgs %}
-<div class="col">
-  <div class="card h-100">
-    <!-- <img src="..." class="card-img-top" alt="..."> -->
-    <div class="card-body">
-      <h5 class="card-title">{{ organisation.name }}</h5>
-      <p class="card-text">{{ organisation.get_city_display }}, {{ organisation.get_country_display }}</p>
+<div class="container-fluid">
+
+  <div class="row mb-3">
+    <div class="col">
+      <form class="d-flex">
+        <input class="form-control me-2" type="search" name="search" placeholder="Search" aria-label="Search">
+        <button class="btn btn-outline-success" type="submit">Search</button>
+      </form>
     </div>
-    <ul class="list-group list-group-flush">
-      <li class="list-group-item">No. of reports:<span>{{ organisation.report_count }}</span></li>
-    </ul>
   </div>
-</div>
-{% endfor %}
+
+
+  <div class="row row-cols-1 row-cols-sm-2 row-cols-md-4 g-4">
+  {% for organisation in orgs %}
+  <div class="col">
+    <div class="card h-100">
+      <!-- <img src="..." class="card-img-top" alt="..."> -->
+      <div class="card-body">
+        <h5 class="card-title">{{ organisation.name }}</h5>
+        <p class="card-text">{{ organisation.get_city_display }}, {{ organisation.get_country_display }}</p>
+      </div>
+      <ul class="list-group list-group-flush">
+        <li class="list-group-item">No. of reports:<span>{{ organisation.report_count }}</span></li>
+      </ul>
+    </div>
+  </div>
+  {% endfor %}
+  </div>
 </div>
 
 {% endblock %}
