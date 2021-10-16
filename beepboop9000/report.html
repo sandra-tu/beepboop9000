@@ -1,0 +1,99 @@
+{% extends "mainappname/base.html" %}  <!-- Change to app name -->
+{% load static %}
+{% load crispy_forms_tags %}
+
+{% block title %}Report an incident{% endblock %}
+
+{% block content %}
+<div class="container-fluid container-max">
+  <form method="POST" class="row needs-validation" novalidate>
+    {% csrf_token %}
+        
+    <div class="row justify-content-center">
+      <!-- Date -->
+      <div class="col-sm-6 mb-3">
+        {{ form.date|as_crispy_field }}
+      </div>
+      <!-- Time -->
+      <div class="col-sm-6 mb-3">
+        {{ form.time|as_crispy_field }}
+      </div>
+    </div>
+
+    <div class="row justify-content-center">
+      <!-- Details of the accused -->
+      <div class="col-sm-12 mb-3">
+          {{ form.accused|as_crispy_field }}
+      </div>
+    </div>
+
+    <div class="row justify-content-center">
+      <!-- Description of the incident -->
+      <div class="col-sm-12 mb-3">
+          {{ form.description|as_crispy_field }}
+      </div>
+    </div>
+
+    <div class="row justify-content-center">
+      <!-- Name [optional] -->
+      <div class="col-sm-12 mb-3">
+        {{ form.name|as_crispy_field }}
+      </div>
+    </div>
+
+    <div class="row justify-content-center">
+      <!-- Mandatory feild note -->
+      <div class="col-sm-12">
+        <p class="mandatory-p"><span class="mandatory">*</span> indicates mandatory field</p>
+      </div>
+    </div>
+
+    <!-- <div class="row justify-content-center">
+      <div class="col-sm-12">
+        <div class="form-check">
+          <input id="permission1" type="checkbox" class="form-check-input" required>
+          <label class="form-check-label" for="permission1">I understand my that story may be edited for grammar or
+            clarity, but not content.</label>
+          <div class="invalid-feedback">You must acknowledge this</div>
+        </div>
+      </div>
+    </div>
+
+    <div class="row justify-content-center">
+      <div class="col-sm-12">
+        <div class="form-check">
+          <input id="permission2" type="checkbox" class="form-check-input" required>
+          <label class="form-check-label" for="permission2">By submitting my story, I give permission for it to be
+            published online after moderation.</label>
+          <div class="invalid-feedback">You must give permission</div>
+        </div>
+      </div>
+    </div> -->
+
+    <!-- Submit -->
+    <div class="row text-center">
+      <div class="col-sm-12 mt-3 mb-3">
+        <button class="btn" type="submit" name="submit">Submit my report</button>
+      </div>
+    </div>
+  </form>
+</div>
+
+<!-- Bootstrap Form Validation -->
+<script>
+// Fetch all the forms we want to apply custom Bootstrap validation styles to
+var forms = document.querySelectorAll('.needs-validation');
+// Loop over them and prevent submission
+Array.prototype.slice.call(forms)
+  .forEach(function(form) {
+    form.addEventListener('submit', function(event) {
+      if (!form.checkValidity()) {
+        event.preventDefault();
+        event.stopPropagation();
+      }
+      form.classList.add('was-validated');
+    }, false);
+  })
+</script>
+
+{% endblock %}
