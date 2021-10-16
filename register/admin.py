@@ -3,4 +3,4 @@ from .models import Organisation
 
 @admin.register(Organisation)
 class OrganisationAdmin(Organisation):
-    list_display('name', 'country', 'city')
+    list_display = ['name', 'country', 'city']
