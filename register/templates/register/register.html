@@ -12,25 +12,26 @@
     <div class="row justify-content-center">
       <!-- Name of organisation -->
       <div class="col-sm-12 mb-3">
-          Name:
-          {% comment %} {{ form.name|as_crispy_field }} {% endcomment %}
-          <input type="text" name="name" value="">
-          <input type="text" name="type" value="">
+          {% comment %} Name: {% endcomment %}
+          {{ form.name|as_crispy_field }}
+          {% comment %} <input type="text" name="name" value=""> {% endcomment %}
+          {{ form.type|as_crispy_field }}
+          {% comment %} <input type="text" name="type" value=""> {% endcomment %}
       </div>
     </div>
 
     <div class="row justify-content-center">
       <!-- City -->
       <div class="col-sm-6 mb-3">
-        {% comment %} {{ form.city|as_crispy_field }} {% endcomment %}
-        City:
-        <input type="text" name="city" value="">
+        {{ form.city|as_crispy_field }}
+        {% comment %} City: {% endcomment %}
+        {% comment %} <input type="text" name="city" value=""> {% endcomment %}
       </div>
       <!-- Country -->
       <div class="col-sm-6 mb-3">
-        {% comment %} {{ form.country|as_crispy_field }} {% endcomment %}
-        Country:
-        <input type="text" name="country" value="">
+        {{ form.country|as_crispy_field }}
+        {% comment %} Country:
+        <input type="text" name="country" value=""> {% endcomment %}
       </div>
     </div>
 
@@ -38,17 +39,17 @@
       <!-- Details of the accused -->
       <div class="col-sm-12 mb-3">
           {% comment %} {{ form.type|as_crispy_field }} {% endcomment %}
-          Description of accused:
-          <input type="text" name="accused_desc" value="">
+          {% comment %} Description of accused:
+          <input type="text" name="accused_desc" value=""> {% endcomment %}
       </div>
     </div>
 
     <div class="row justify-content-center">
       <!-- Description of the incident -->
       <div class="col-sm-12 mb-3">
-          Email:
-          <input type="text" name="email" value="">
-          {% comment %} {{ form.emails|as_crispy_field }} {% endcomment %}
+          {% comment %} Email:
+          <input type="text" name="email" value=""> {% endcomment %}
+          {{ form.email|as_crispy_field }}
       </div>
     </div>
 
