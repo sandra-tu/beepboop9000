@@ -1,4 +1,4 @@
-{% extends "beepboop9000/base.html" %} 
+{% extends "beepboop9000/base.html" %}
 {% load static %}
 
 {% block title %}View{% endblock %}
@@ -6,7 +6,7 @@
 {% block content %}
 
 <div class="row row-cols-1 row-cols-md-2 g-4">
-{% for organisation in object_list %}
+{% for organisation in orgs %}
 <div class="col">
   <div class="card h-100">
     <!-- <img src="..." class="card-img-top" alt="..."> -->
