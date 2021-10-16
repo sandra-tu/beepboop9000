@@ -22,5 +22,6 @@ class Organisation(models.Model):
     city = models.CharField(max_length=50)
     type = models.CharField(max_length=25, choices=TYPE_CHOICES)
     email = models.EmailField()
+    report_count = models.IntegerField(blank=False, null=False, default=0)
 
 # Create your models here.
