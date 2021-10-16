@@ -6,38 +6,49 @@
 
 {% block content %}
 <div class="container-fluid container-max">
-  <form method="POST" class="row needs-validation" novalidate>
+  <form method="POST" class="row needs-validation" action="/register_submit/" novalidate>
     {% csrf_token %}
 
     <div class="row justify-content-center">
       <!-- Name of organisation -->
       <div class="col-sm-12 mb-3">
-          {{ form.name|as_crispy_field }}
+          Name:
+          {% comment %} {{ form.name|as_crispy_field }} {% endcomment %}
+          <input type="text" name="name" value="">
+          <input type="text" name="type" value="">
       </div>
     </div>
-        
+
     <div class="row justify-content-center">
       <!-- City -->
       <div class="col-sm-6 mb-3">
-        {{ form.city|as_crispy_field }}
+        {% comment %} {{ form.city|as_crispy_field }} {% endcomment %}
+        City:
+        <input type="text" name="city" value="">
       </div>
       <!-- Country -->
       <div class="col-sm-6 mb-3">
-        {{ form.country|as_crispy_field }}
+        {% comment %} {{ form.country|as_crispy_field }} {% endcomment %}
+        Country:
+        <input type="text" name="country" value="">
       </div>
     </div>
 
     <div class="row justify-content-center">
       <!-- Details of the accused -->
       <div class="col-sm-12 mb-3">
-          {{ form.type|as_crispy_field }}
+          {% comment %} {{ form.type|as_crispy_field }} {% endcomment %}
+          Description of accused:
+          <input type="text" name="accused_desc" value="">
       </div>
     </div>
 
     <div class="row justify-content-center">
       <!-- Description of the incident -->
       <div class="col-sm-12 mb-3">
-          {{ form.emails|as_crispy_field }}
+          Email:
+          <input type="text" name="email" value="">
+          {% comment %} {{ form.emails|as_crispy_field }} {% endcomment %}
       </div>
     </div>
 
@@ -81,18 +92,18 @@
 <!-- Bootstrap Form Validation -->
 <script>
 // Fetch all the forms we want to apply custom Bootstrap validation styles to
-var forms = document.querySelectorAll('.needs-validation');
-// Loop over them and prevent submission
-Array.prototype.slice.call(forms)
-  .forEach(function(form) {
-    form.addEventListener('submit', function(event) {
-      if (!form.checkValidity()) {
-        event.preventDefault();
-        event.stopPropagation();
-      }
-      form.classList.add('was-validated');
-    }, false);
-  })
+    var forms = document.querySelectorAll('.needs-validation');
+    // Loop over them and prevent submission
+    Array.prototype.slice.call(forms)
+      .forEach(function(form) {
+        form.addEventListener('submit', function(event) {
+          if (!form.checkValidity()) {
+            event.preventDefault();
+            event.stopPropagation();
+          }
+          form.classList.add('was-validated');
+        }, false);
+      })
 </script>
 
 {% endblock %}
