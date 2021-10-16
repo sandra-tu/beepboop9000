@@ -2,24 +2,23 @@
 from django.shortcuts import render
 from django.http import Http404
 from .forms import RegisterForm
+from .models import Organisation
 
 def register_view(request):
     if request.method == 'POST':
         form = RegisterForm(request.POST)
         if form.is_valid():
-            name = form.cleaned_data['name']
-            email = form.cleaned_data['email']
-            author = form.cleaned_data['author']
-            avatar = form.cleaned_data['avatar']
-            title = form.cleaned_data['title']
-            story = form.cleaned_data['story']
+            form_name = form.cleaned_data['name']
+            form_country = form.cleaned_data['email']
+            form_city = form.cleaned_data['author']
+            form_type = form.cleaned_data['avatar']
+            form_email = form.cleaned_data['title']
 
-            message = "Name: " + name + "\n"
-            message += "Email: " + email + "\n"
-            message += "Author: " + author + "\n"
-            message += "Avatar: " + avatar + "\n"
-            message += "Title: " + title + "\n \n"
-            message += story + "\n \n END OF STORY"
+            organisation_name = Organisation.objects.create(name=form_name)
+            organisation_country = Organisation.objects.create(name=form_country)
+            organisation_city = Organisation.objects.create(name=form_city)
+            organisation_type = Organisation.objects.create(name=form_type)
+            organisation_email = Organisation.objects.create(name=form_email)
 
             # try:
             #     send_mail('Story Submission', message, email,

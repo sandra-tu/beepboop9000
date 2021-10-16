@@ -25,7 +25,7 @@ class Organisation(models.Model):
     report_count = models.IntegerField(blank=False, null=False, default=0)
 
     # to prevent spam - allows admin to manually allow an orgnaisation to show
-    active = models.BooleanField(default=False) 
+    # verified = models.BooleanField(default=False) 
 
     class Meta:
         # sort results by name by default when querying DB

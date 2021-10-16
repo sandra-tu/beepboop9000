@@ -1,4 +1,5 @@
 from django import forms
+from .models import Organisation
 
 COUNTRY_CHOICES = [
         ('gb','Great Britain'),
@@ -16,6 +17,9 @@ TYPE_CHOICES = [
 CITY_CHOICES = [('edi', 'Edinburgh')]
 
 class RegisterForm(forms.Form):
+    # class Meta:
+    #     model = Organisation
+    #     feilds = ('name', 'country', 'city', 'type', 'email')
     name = forms.CharField(max_length=255, required=False)
     country = forms.CharField(label='Country', widget=forms.Select(choices=COUNTRY_CHOICES))
     city = forms.CharField(label='Country', widget=forms.Select(choices=CITY_CHOICES))
