@@ -43,46 +43,6 @@
         </div>
       </nav>
 
-
-
-
-      <nav class="navbar sticky-top navbar-expand-lg navbar-light">
-        <div class="container-fluid">
-          <a class="navbar-brand" href="#">
-            <img src="{% static 'control_freaks/images/logo1.png' %}" height="40" width="40" class="d-inline-block align-text-top">
-            control freaks
-          </a>
-          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent"
-            aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-            <span class="navbar-toggler-icon"></span>
-          </button>
-          <div class="collapse navbar-collapse" id="navbarSupportedContent">
-            <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
-              <li class="nav-item">
-                <a class="nav-link" href="{% url 'home' %}" data-toggle="collapse"
-                  data-target=".nav-collapse">home</a>
-              </li>
-              <li class="nav-item">
-                <a class="nav-link" href="{% url 'home' %}#about" data-toggle="collapse" data-target=".nav-collapse">about</a>
-              </li>
-              <li class="nav-item">
-                <a class="nav-link" href="{% url 'inform' %}" data-toggle="collapse" data-target=".nav-collapse">inform yourself</a>
-              </li>
-              <li class="nav-item">
-                <a class="nav-link" href="{% url 'stories' %}" data-toggle="collapse" data-target=".nav-collapse">stories</a>
-              </li>
-              <li class="nav-item">
-                <a class="nav-link" href="{% url 'submit' %}" data-toggle="collapse" data-target=".nav-collapse">share your
-                  story</a>
-              </li>
-              <li class="nav-item">
-                <a class="nav-link" href="{% url 'contact' %}" data-toggle="collapse" data-target=".nav-collapse">contact us</a>
-              </li>
-            </ul>
-          </div>
-        </div>
-      </nav>
-
       {% block content %}
       
       {% endblock %}
