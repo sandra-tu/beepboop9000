@@ -12,6 +12,7 @@ class Report(models.Model):
         ('boss', 'Boss'),
         ('other', 'Other'),
     ]
+    
     date = models.DateField()
     time = models.TimeField(blank=True, null=True)
     accused_description = models.CharField(max_length=1000, blank=True)
