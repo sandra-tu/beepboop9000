@@ -6,14 +6,14 @@
 
 {% block content %}
 <div class="container-fluid" style="max-width: 992px">
- 
+
   <div class="row justify-content-center">
     <div class="col-sm-12 text-center">
       <h1>Report an incident</h1>
     </div>
   </div>
 
-  <form method="POST" class="row needs-validation" novalidate>
+  <form method="POST" class="row needs-validation" action="report_submit" novalidate>
     {% csrf_token %}
 
     <div class="row justify-content-center">
