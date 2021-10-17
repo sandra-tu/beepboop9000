@@ -3,4 +3,4 @@ from .models import Report
 
 @admin.register(Report)
 class ReportAdmin(admin.ModelAdmin):
-    pass
+    list_display = ['date', 'location']
