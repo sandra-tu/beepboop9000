@@ -5,7 +5,8 @@ class ReportForm(forms.ModelForm):
     class Meta:
         model = Report
 
-        fields = ('date', 'time', 'event_description', 'accused_description', 'name')
+        fields = ('date', 'time', 'event_description', 'accused_description', 'name', 'location')
         widgets = {
-            'date': forms.TextInput(attrs={'type': 'date'})
+            'date': forms.TextInput(attrs={'type': 'date'}),
+            'time': forms.TextInput(attrs={'type': 'time'}),
         }
