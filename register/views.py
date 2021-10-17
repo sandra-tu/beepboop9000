@@ -36,6 +36,7 @@ def submit_view(request):
             type = form_type,
             email=form_email,
         )
+        new_org.save()
 
         # try:
         #     send_mail('Story Submission', message, email,
