@@ -13,7 +13,7 @@ class Report(models.Model):
         ('other', 'Other'),
     ]
     date = models.DateField()
-    time = models.TimeField(blank=True)
+    time = models.TimeField(blank=True, null=True)
     accused_description = models.CharField(max_length=1000, blank=True)
     location = models.ForeignKey(Organisation, on_delete=models.SET_NULL, null=True, blank=False)
     repeat = models.BooleanField(default=False)
