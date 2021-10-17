@@ -28,6 +28,13 @@
     </div>
 
     <div class="row justify-content-center">
+      <!-- Details of the location -->
+      <div class="col-sm-12 mb-3">
+          {{ form.location|as_crispy_field }}
+      </div>
+    </div>
+
+    <div class="row justify-content-center">
       <!-- Details of the accused -->
       <div class="col-sm-12 mb-3">
           {{ form.accused_description|as_crispy_field }}
