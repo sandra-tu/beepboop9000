@@ -3,6 +3,9 @@ from django.db import models
 from django.conf import settings
 
 class Organisation(models.Model):
+    def __str__(self):
+        return self.name
+
     COUNTRY_CHOICES = [
         ('gb','Great Britain'),
         ('ie', 'Ireland'),
@@ -25,7 +28,7 @@ class Organisation(models.Model):
     report_count = models.IntegerField(blank=False, null=False, default=0)
 
     # to prevent spam - allows admin to manually allow an orgnaisation to show
-    # verified = models.BooleanField(default=False) 
+    # verified = models.BooleanField(default=False)
 
     class Meta:
         # sort results by name by default when querying DB
