@@ -5,17 +5,20 @@ from django.http import Http404
 from register.models import Organisation
 from django.views.generic import ListView
 from django.db.models import Q
-#
+
 # class ViewPageView(TemplateView):
 #     model = Organisation
 #     template_name = "view/view.html"
 
 def view_view(request):
-    # orgs = Organisation.objects.all()
     search_organisation = request.GET.get('search')
-
     if search_organisation:
-        organisations = Organisation.objects.filter(Q(name__icontains=search_organisation))
+        organisations = Organisation.objects.filter(
+            Q(name__icontains=search_organisation) |
+            Q(country__icontains=search_organisation) |
+            Q(city__icontains=search_organisation) |
+            Q(type__icontains=search_organisation)
+            )
     else:
         # If not searched, return default posts
         organisations = Organisation.objects.all().order_by("name")
