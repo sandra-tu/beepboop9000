@@ -18,6 +18,6 @@ class Report(models.Model):
     location = models.ForeignKey(Organisation, on_delete=models.SET_NULL, null=True, blank=False)
     repeat = models.BooleanField(default=False)
     name = models.CharField(blank=True, max_length=100)
-    event_description = models.CharField(blank=True, max_length=4000)
+    event_description = models.CharField(max_length=4000, blank=False)
     accused_relationship = models.CharField(choices=RELATIONSHIP_CHOICES, blank=False, max_length=100)
     submitter_relationship = models.CharField(choices=RELATIONSHIP_CHOICES, blank=False, max_length=100)
