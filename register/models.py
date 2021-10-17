@@ -16,7 +16,10 @@ class Organisation(models.Model):
         ('store', 'Store'),
         ('other', 'Other'),
     ]
-    CITY_CHOICES = [('edinburgh', 'Edinburgh')]
+    CITY_CHOICES = [
+        ('edinburgh', 'Edinburgh'),
+        ('dublin', 'Dublin'),
+    ]
     name = models.CharField(max_length=150)
     country = models.CharField(max_length=50, choices=COUNTRY_CHOICES)
     city = models.CharField(max_length=50, choices=CITY_CHOICES)
