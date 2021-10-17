@@ -5,7 +5,14 @@
 {% block title %}Report an incident{% endblock %}
 
 {% block content %}
-<div class="container-fluid container-max">
+<div class="container-fluid" style="max-width: 992px">
+ 
+  <div class="row justify-content-center">
+    <div class="col-sm-12 text-center">
+      <h1>Report an incident</h1>
+    </div>
+  </div>
+
   <form method="POST" class="row needs-validation" novalidate>
     {% csrf_token %}
 
@@ -73,7 +80,7 @@
     <!-- Submit -->
     <div class="row text-center">
       <div class="col-sm-12 mt-3 mb-3">
-        <button class="btn" type="submit" name="submit">Submit my report</button>
+        <button class="btn btn-outline-primary" type="submit" name="submit">Submit my report</button>
       </div>
     </div>
   </form>

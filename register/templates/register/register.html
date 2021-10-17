@@ -5,19 +5,28 @@
 {% block title %}Register my organisation{% endblock %}
 
 {% block content %}
-<div class="container-fluid container-max">
+<div class="container-fluid" style="max-width: 992px">
+
+  <div class="row justify-content-center">
+    <div class="col-sm-12 text-center">
+      <h1>Register your organisation</h1>
+    </div>
+  </div>
+
   <form method="POST" class="row needs-validation" action="/register_submit/" novalidate>
     {% csrf_token %}
 
     <div class="row justify-content-center">
         <!-- Name of organisation -->
-        <div class="col-sm-12 mb-3">
+        <div class="col-sm-6 mb-3">
           {% comment %} Name: {% endcomment %}
           {{ form.name|as_crispy_field }}
           {% comment %} <input type="text" name="name" value=""> {% endcomment %}
+        </div>
+        <div class="col-sm-6 mb-3">  
           {{ form.type|as_crispy_field }}
           {% comment %} <input type="text" name="type" value=""> {% endcomment %}
-        </div>
+        </div>  
     </div>
 
     <div class="row justify-content-center">
@@ -84,7 +93,7 @@
     <!-- Submit -->
     <div class="row text-center">
       <div class="col-sm-12 mt-3 mb-3">
-        <button class="btn" type="submit" name="submit">Register my organisation</button>
+        <button class="btn btn-outline-primary" type="submit" name="submit">Register</button>
       </div>
     </div>
   </form>
