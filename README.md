@@ -9,3 +9,5 @@ Inspired by recent incidences of spiking in Edinburgh as well as reports of sexu
 The application also features a browser for registered organisations and respective numbers of reported incidences, so that users can make more informed decisions about the establishments they visit.
 
 The application was built over the course of two days with **Django**, **Bootstrap**, and deployed with PythonAnywhere.
+
+Our project Safer Spaces was the winning entry for "Best social responsibilty application".
